@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #111;
+    color: #fff;
+}
+
+.portfolio-container {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.navlist {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(17, 17, 17, 0.95);
+    z-index: 1000;
+    list-style: none;
+}
+
+.navlist li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    color: #fff;
+    position: relative;
+    transition: 0.3s ease-in-out;
+}
+
+.navlist li a:hover,
+.navlist li a.active {
+    color: #5db9ee;
+}
+
+.navlist li a::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: #5db9ee;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transition: 0.3s ease-in-out;
+}
+
+.navlist li a:hover::after,
+.navlist li a.active::after {
+    transform: scaleX(1);
+}
+
+.main-content {
+    padding-top: 70px;
+}
+
+.page-section {
+    min-height: 100vh;
+    padding: 5rem 3rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero {
+    flex-direction: row;
+    align-items: center;
+    background: linear-gradient(135deg, #1f1f1f, #262525);
+}
+
+.left-container,
+.right-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-container {
+    gap: 2rem;
+    padding-left: 2rem;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.icon .fa-brands {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: linear-gradient(#fff, #3877ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.content {
+    max-width: 38rem;
+}
+
+.content .intro {
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.content .intro span {
+    color: #5db9ee;
+}
+
+.content h1 {
+    font-size: 3.5rem;
+    color: #5db9ee;
+    margin: 0.5rem 0;
+}
+
+.description {
+    font-size: 1.05rem;
+    color: #d0d0d0;
+    line-height: 1.8;
+}
+
+.btn-content {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.4rem;
+    border: 1px solid #5db9ee;
+    border-radius: 0.5rem;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #5db9ee;
+    color: #fff;
+}
+
+.btn.secondary {
+    background: transparent;
+}
+
+.profile-card {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px solid #5db9ee;
+    box-shadow: 0 0 20px rgba(93, 185, 238, 0.4);
+}
+
+.profile-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page-section h2 {
+    font-size: 2rem;
+    color: #5db9ee;
+    margin-bottom: 1.5rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.card,
+.content-box,
+.timeline-item {
+    background: #1d1d1d;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid #2f2f2f;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    margin-bottom: 0.7rem;
+    color: #fff;
+}
+
+.card p,
+.about-section p,
+.content-box p,
+.timeline-item p {
+    color: #c7c7c7;
+    line-height: 1.7;
+}
+
+.about-section,
+.content-section,
+.education-section {
+    background: #151515;
+}
+
+.timeline {
+    display: grid;
+    gap: 1rem;
+    max-width: 700px;
+}
+
+@media (max-width: 768px) {
+    .navlist {
+        gap: 1rem;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left-container {
+        padding-left: 0;
+        flex-direction: column;
+    }
+
+    .btn-content {
+        justify-content: center;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
